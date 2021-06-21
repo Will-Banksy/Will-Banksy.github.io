@@ -151,6 +151,14 @@ main p {
 	margin-bottom: 1rem;
 }
 
+a.post {
+	color: var(--text);
+}
+
+a.post:hover {
+	text-decoration: none;
+}
+
 .post:hover {
 	outline: 1px solid var(--text);
 }
