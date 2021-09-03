@@ -18,7 +18,9 @@ const themes = [
 	new Theme("Fire", "assets/theme/fire",
 		"#fff2b0", "#fade4e", "#e43242", "#a22e41", "#752a3f", "#441d33", "#1c0c18"),
 	new Theme("Ocean", "assets/theme/ocean",
-		"#c6fffb", "#39f0e2", "#00cfd3", "#4d8a8b", "#26504f", "#152f2c", "#051917")
+		"#c6fffb", "#39f0e2", "#00cfd3", "#4d8a8b", "#26504f", "#152f2c", "#051917"),
+	new Theme("Forest", "assets/theme/forest",
+		"#def2cb", "#83da30", "#22cb3e", "#37a661", "#3b8766", "#2f6152", "#294542")
 ];
 
 /* Switching the theme is not allowed until the page has fully loaded */
