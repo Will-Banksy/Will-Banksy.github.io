@@ -43,7 +43,13 @@
 </p>
 <!-- https://stackoverflow.com/questions/19654577/html-embedded-pdf-iframe#19654875 -->
 <object data="assets/Steganography-And-Encryption-Report.pdf" type="application/pdf" width=100% style="height: 100vh;">
-    <iframe src="https://docs.google.com/viewer?url=assets/Steganography-And-Encryption-Report.pdf&embedded=true"></iframe>
+    <iframe id="steg-enc-report-pdf" src="https://docs.google.com/viewer?url=assets/Steganography-And-Encryption-Report.pdf&embedded=true"></iframe>
+    <script>
+var hostname = window.location.hostname;
+var path = "assets/Steganography-And-Encryption-Report.pdf";
+var iframeSrc = "https://docs.google.com/viewer?url=" + hostname + "/" + path + "&embedded=true"
+document.getElementById("steg-enc-report-pdf").src = iframeSrc;
+    </script>
 </object>
 			</article>
 		</main>
