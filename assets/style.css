@@ -67,6 +67,7 @@ header {
 	font-family: 'Edit Undo', sans-serif;
 	color: var(--back-dark);
 	position: relative;
+	padding-right: 1rem; /* Space for the theme selector */
 }
 
 .header-content-container {
@@ -120,7 +121,7 @@ nav {
 	right: 0px;
 	top: 0px;
 	height: 100%;
-	width: 20px;
+	width: min(20px, 8%); /* Arbitrary but works nicely */
 	display: flex;
 	flex-direction: column;
 

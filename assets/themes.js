@@ -21,7 +21,13 @@ const themes = [
 		"#c6fffb", "#39f0e2", "#00cfd3", "#4d8a8b", "#26504f", "#152f2c", "#051917")
 ];
 
-var currThemeIdx = 0;
+// When this script is parsed - After page load (cause script is deferred) - Set the theme to the one saved for the user
+const defaultThemeIdx = 0;
+var storedTheme = sessionStorage.getItem("themeIdx");
+var currThemeIdx = storedTheme === null ? defaultThemeIdx : storedTheme;
+if(currThemeIdx != defaultThemeIdx) {
+	SetTheme(currThemeIdx);
+}
 
 function SwitchTheme() {
 	var oldThemeIdx = currThemeIdx;
@@ -37,7 +43,11 @@ function SwitchTheme() {
 		return;
 	}
 
-	var currTheme = themes[currThemeIdx];
+	SetTheme(currThemeIdx);
+}
+
+function SetTheme(themeIdx) {
+	var currTheme = themes[themeIdx];
 
 	// Set all of the colour variables
 	var rootStyle = document.documentElement.style;
@@ -64,4 +74,7 @@ function SwitchTheme() {
 	for(var i = ghImgs.length - 1; i >= 0; i--) {
 		ghImgs[i].src = currTheme.assets_path + "/github.png";
 	}
+
+	// Save the theme the user selects in session storage - When the session ends (like when tab closed) then the data will be deleted. Or should I use localStorage to store it forever? I don't like to do that though
+	sessionStorage.setItem("themeIdx", themeIdx);
 }
