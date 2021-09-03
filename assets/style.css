@@ -124,6 +124,7 @@ nav {
 	width: min(20px, 8%); /* Arbitrary but works nicely */
 	display: flex;
 	flex-direction: column;
+	align-items: stretch;
 
 	border: none;
 	outline: none;
