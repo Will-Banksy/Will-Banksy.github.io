@@ -11,7 +11,7 @@
 		<header>
 	<div class="header-content-container">
 		<a href="index.html" class="header-title-container">
-			<img src="assets/Icon.png" alt="Blog icon"></img>
+			<img class="theme-img-logo" src="assets/theme/fire/icon.png" alt="Blog icon"></img>
 			<h1>WillBanksy's<br>Blog</h1>
 		</a>
 		<nav>
@@ -20,17 +20,29 @@
 			</ul>
 		</nav>
 	</div>
+	<button class="switch-theme-button" type="button" onclick="SwitchTheme()">
+		<div style="background-color: var(--text);"></div>
+		<div style="background-color: var(--text-intense);"></div>
+		<div style="background-color: var(--accent);"></div>
+		<div style="background-color: var(--back-light);"></div>
+		<div style="background-color: var(--back-mid);"></div>
+		<div style="background-color: var(--back-dark);"></div>
+		<div style="background-color: var(--back-vdark);"></div>
+	</button>
+	<script src="assets/themes.js" defer></script>
 </header>
 
 		<main>
 			<h1>Posts</h1>
 			<a class="post" href="steganography-and-encryption-report.html">
-	<div class="post-thumbnail" style="background-image: url('assets/Icon.png'); image-rendering: crisp-edges;"></div>
+	<div class="post-thumbnail-container">
+		<img class="post-thumbnail-img" src="assets/theme/fire/icon.png" alt="">
+	</div>
 	<div class="post-text-container">
 		<h2 class="post-title">Steganography And Encryption Report</h2>
 		<p class="post-description">This was done for my Introduction to Security module at uni, the grade I got was A+.</p>
 		<div class="post-date-time-container">
-			<img src="assets/calendar-icon.png">
+			<img class="theme-img-calendar" src="assets/theme/fire/calendar.png">
 			<p>21 June 2021 - 05:53 PM</p>
 		</div>
 	</div>
@@ -38,9 +50,14 @@
 		</main>
 
 		<footer>
-			<div>
-				<p>&copy; 2021 William Banks</p>
-			</div>
-		</footer>
+	<div class="footer-flex-container">
+		<p>&copy; 2021 William Banks</p>
+		<div class="footer-link-list">
+			<a href="https://github.com/Will-Banksy">
+				<img class="theme-img-github" src="assets/theme/fire/github.png">
+			</a>
+		</div>
+	</div>
+</footer>
 	</body>
 </html>

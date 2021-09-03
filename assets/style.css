@@ -8,16 +8,16 @@
 :root {
 	--text: #fff2b0;
 	--text-intense: #fade4e;
-	--back-dark: #441d33;
-	--back-mid: #752a3f;
-	--back-light: #a22e41;
-	--back-vdark: #1c0c18;
 	--accent: #e43242;
+	--back-light: #a22e41;
+	--back-mid: #752a3f;
+	--back-dark: #441d33;
+	--back-vdark: #1c0c18;
 
 	color: var(--text);
 	background-color: var(--back-vdark);
 	font-family: 'Red Hat Text', sans-serif;
-	/*font-size: 14pt;*/
+	font-size: min(4vw, 12pt);
 }
 
 * {
@@ -66,6 +66,7 @@ header {
 	/*box-shadow: 0px 0px 10px var(--back-vdark);*/
 	font-family: 'Edit Undo', sans-serif;
 	color: var(--back-dark);
+	position: relative;
 }
 
 .header-content-container {
@@ -113,15 +114,29 @@ nav {
 	font-size: 2rem;
 }
 
-/*.link-list a {
-	text-decoration: none;
-	color: var(--text);
+.switch-theme-button {
+	position: absolute;
+	box-sizing: border-box;
+	right: 0px;
+	top: 0px;
+	height: 100%;
+	width: 20px;
+	display: flex;
+	flex-direction: column;
+
+	border: none;
+	outline: none;
+	background-color: var(--back-light);
 }
 
-.link-list a:hover {
-	text-decoration: underline;
-	color: var(--text);
-}*/
+.switch-theme-button:hover {
+	border: 1px solid var(--text);
+}
+
+.switch-theme-button div {
+	position: relative;
+	flex-grow: 1;
+}
 
 main {
 	max-width: 1200px;
@@ -147,10 +162,11 @@ main p {
 .post {
 	box-sizing: border-box;
 	display: flex;
-	height: 8rem;
+	/*height: 8rem;*/
 	background-color: var(--back-vdark);
 	overflow: hidden;
 	margin-bottom: 1rem;
+	align-items: stretch;
 }
 
 a.post {
@@ -169,21 +185,55 @@ a.post:hover {
 	margin: 0px;
 }
 
-.post-thumbnail {
-	height: 8rem;
-	width: 8rem;
-	background-position: center;
-	background-size: cover;
+/* Argh! Need to come up with a decent responsive post link thingy */
+
+.post-thumbnail-container {
 	flex-shrink: 0;
+	position: relative;
+	align-self: center;
 }
 
-.post-thumbnail::after {
+/* Tiny screens. Should always do tiny screens as default */
+.post-thumbnail-img {
+	image-rendering: crisp-edges;
+	display: block;
+	width: 4rem;
+	height: 4rem;
+}
+
+/* Large screens */
+@media only screen and (min-width: 1024px) {
+	.post-thumbnail-img {
+		width: 8rem;
+		height: 8rem;
+	}
+}
+
+/* Medium-sized screens */
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+	.post-thumbnail-img {
+		width: 8rem;
+		height: 8rem;
+	}
+}
+
+/* Small screens */
+@media only screen and (max-width: 767px) and (min-width: 540px) {
+	.post-thumbnail-img {
+		width: 6rem;
+		height: 6rem;
+	}
+}
+
+.post-thumbnail-container::after {
 	content: "";
 	box-sizing: border-box;
 	border: 2px solid rgba(255, 255, 255, 0.1);
 	display: inline-block;
 	width: 100%;
 	height: 100%;
+	position: absolute;
+	top: 0;
 }
 
 .post-text-container {
@@ -198,7 +248,7 @@ a.post:hover {
 .post-description {
 	overflow: hidden;
 	text-overflow: "[...]";
-	white-space: nowrap;
+	/*white-space: nowrap;*/
 }
 
 .post-date-time-container {
@@ -208,10 +258,10 @@ a.post:hover {
 }
 
 .post-date-time-container img {
-	width: auto;
+	width: min(1rem, 14px); /* The image is 14x14 */
 	height: auto;
 	margin-right: 0.6rem;
-	image-rendering: crisp-edges;
+	image-rendering: pixelated; /* Pixelated uses smoothing when downscaling and nearest-neighbour when upscaling */
 }
 
 /* Doing a bit of responsive web design here, oooooh! */
@@ -284,10 +334,29 @@ footer {
 	margin-top: 5rem
 }
 
-footer div {
+.footer-flex-container {
 	max-width: 1200px;
 	margin: auto;
 	padding: 1rem 0.6rem;
 	font-style: italic;
 	color: var(--back-mid);
+	display: flex;
+	justify-content: space-between;
+}
+
+.footer-link-list {
+	display: flex;
+}
+
+.footer-link-list * {
+	margin-right: 1rem;
+}
+
+.footer-link-list *:first-child {
+	margin-right: 0;
+}
+
+.footer-link-list img {
+	width: min(1rem, 16px);
+	height: auto;
 }

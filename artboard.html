@@ -11,7 +11,7 @@
 		<header>
 	<div class="header-content-container">
 		<a href="index.html" class="header-title-container">
-			<img src="assets/Icon.png" alt="Blog icon"></img>
+			<img class="theme-img-logo" src="assets/theme/fire/icon.png" alt="Blog icon"></img>
 			<h1>WillBanksy's<br>Blog</h1>
 		</a>
 		<nav>
@@ -20,11 +20,22 @@
 			</ul>
 		</nav>
 	</div>
+	<button class="switch-theme-button" type="button" onclick="SwitchTheme()">
+		<div style="background-color: var(--text);"></div>
+		<div style="background-color: var(--text-intense);"></div>
+		<div style="background-color: var(--accent);"></div>
+		<div style="background-color: var(--back-light);"></div>
+		<div style="background-color: var(--back-mid);"></div>
+		<div style="background-color: var(--back-dark);"></div>
+		<div style="background-color: var(--back-vdark);"></div>
+	</button>
+	<script src="assets/themes.js" defer></script>
 </header>
 
 		<main>
 			<h1>My Pixel Art Artboard</h1>
 			<p>I started off making pixel art using <a href="https://www.piskelapp.com/">Piskel</a> for modding Terraria with tModLoader, now I use <a href="https://www.aseprite.org/">Aseprite</a> for everything. I still do sprites for modding Terraria, but I also do other stuff. I'm not exactly a master but I'm constantly improving. Hopefully.</p>
+			<p>All my sprites are free to use/modify/whatever for any purpose.</p>
 
 			<div class="masonry-container"> <!-- The masonry layout - Fitting lots of images with different aspect ratios without cropping or breaking the aspect ratio -->
 				<figure class="masonry-item">
@@ -74,17 +85,27 @@
 	</div>
 </figure><figure class="masonry-item">
 	<div>
-		<img src="assets/artboard/GravityGun.png" alt="Gravity Gun">
-		<figcaption class="masonry-item-caption">Gravity Gun</figcaption>
+		<img src="assets/artboard/GravityGun.png" alt="Half-Life 2 - Gravity Gun">
+		<figcaption class="masonry-item-caption">Half-Life 2 - Gravity Gun</figcaption>
+	</div>
+</figure><figure class="masonry-item">
+	<div>
+		<img src="assets/artboard/Duck.png" alt="Duck">
+		<figcaption class="masonry-item-caption">Duck</figcaption>
 	</div>
 </figure>
 			</div>
 		</main>
 
 		<footer>
-			<div>
-				<p>&copy; 2021 William Banks</p>
-			</div>
-		</footer>
+	<div class="footer-flex-container">
+		<p>&copy; 2021 William Banks</p>
+		<div class="footer-link-list">
+			<a href="https://github.com/Will-Banksy">
+				<img class="theme-img-github" src="assets/theme/fire/github.png">
+			</a>
+		</div>
+	</div>
+</footer>
 	</body>
 </html>

@@ -11,7 +11,7 @@
 		<header>
 	<div class="header-content-container">
 		<a href="index.html" class="header-title-container">
-			<img src="assets/Icon.png" alt="Blog icon"></img>
+			<img class="theme-img-logo" src="assets/theme/fire/icon.png" alt="Blog icon"></img>
 			<h1>WillBanksy's<br>Blog</h1>
 		</a>
 		<nav>
@@ -20,6 +20,16 @@
 			</ul>
 		</nav>
 	</div>
+	<button class="switch-theme-button" type="button" onclick="SwitchTheme()">
+		<div style="background-color: var(--text);"></div>
+		<div style="background-color: var(--text-intense);"></div>
+		<div style="background-color: var(--accent);"></div>
+		<div style="background-color: var(--back-light);"></div>
+		<div style="background-color: var(--back-mid);"></div>
+		<div style="background-color: var(--back-dark);"></div>
+		<div style="background-color: var(--back-vdark);"></div>
+	</button>
+	<script src="assets/themes.js" defer></script>
 </header>
 
 		<main>
@@ -39,9 +49,14 @@
 		</main>
 
 	   <footer>
-			<div>
-				<p>&copy; 2021 William Banks</p>
-			</div>
-		</footer>
+	<div class="footer-flex-container">
+		<p>&copy; 2021 William Banks</p>
+		<div class="footer-link-list">
+			<a href="https://github.com/Will-Banksy">
+				<img class="theme-img-github" src="assets/theme/fire/github.png">
+			</a>
+		</div>
+	</div>
+</footer>
 	</body>
 </html>
