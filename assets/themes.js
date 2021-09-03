@@ -63,7 +63,7 @@ function SwitchTheme() {
 	SetThemeImgs(currThemeIdx);
 
 	// Save the theme the user selects in session storage - When the session ends (like when tab closed) then the data will be deleted. Or should I use localStorage to store it forever? I don't like to do that though
-	sessionStorage.setItem("themeIdx", themeIdx);
+	sessionStorage.setItem("themeIdx", currThemeIdx);
 }
 
 function SetThemeColours(themeIdx) {
