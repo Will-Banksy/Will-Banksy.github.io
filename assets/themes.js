@@ -24,12 +24,12 @@ const themes = [
 ];
 
 /* Switching the theme is not allowed until the page has fully loaded */
-var acceptSwitchTheme = false;
+let acceptSwitchTheme = false;
 
 // When this script is parsed - After page load (cause script is deferred) - Set the theme to the one saved for the user
 const defaultThemeIdx = 0;
-var storedTheme = sessionStorage.getItem("themeIdx");
-var currThemeIdx = storedTheme === null ? defaultThemeIdx : storedTheme;
+let storedTheme = sessionStorage.getItem("themeIdx");
+let currThemeIdx = storedTheme === null ? defaultThemeIdx : storedTheme;
 if(currThemeIdx != defaultThemeIdx) {
 	// We can immediately set the theme colours because the :root element is available at this point in loading
 	SetThemeColours(currThemeIdx);
@@ -37,8 +37,8 @@ if(currThemeIdx != defaultThemeIdx) {
 
 // When the page is loaded, we can set the icons
 window.onload = function OnLoadHandler() {
-	var storedTheme = sessionStorage.getItem("themeIdx");
-	var currThemeIdx = storedTheme === null ? defaultThemeIdx : storedTheme;
+	let storedTheme = sessionStorage.getItem("themeIdx");
+	let currThemeIdx = storedTheme === null ? defaultThemeIdx : storedTheme;
 	SetThemeImgs(currThemeIdx); // Don't check if the theme is the default one, because no images are loaded by default
 	acceptSwitchTheme = true;
 }
@@ -48,7 +48,7 @@ function SwitchTheme() {
 		return;
 	}
 
-	var oldThemeIdx = currThemeIdx;
+	let oldThemeIdx = currThemeIdx;
 
 	// Increment theme index
 	currThemeIdx++;
@@ -69,10 +69,10 @@ function SwitchTheme() {
 }
 
 function SetThemeColours(themeIdx) {
-	var currTheme = themes[themeIdx];
+	let currTheme = themes[themeIdx];
 
 	// Set all of the colour variables
-	var rootStyle = document.documentElement.style;
+	let rootStyle = document.documentElement.style;
 	rootStyle.setProperty("--text", currTheme.col_text);
 	rootStyle.setProperty("--text-intense", currTheme.col_text_intense);
 	rootStyle.setProperty("--accent", currTheme.col_accent);
@@ -83,21 +83,21 @@ function SetThemeColours(themeIdx) {
 }
 
 function SetThemeImgs(themeIdx) {
-	var currTheme = themes[themeIdx];
+	let currTheme = themes[themeIdx];
 
 	// Change the images
-	var logoImgs = document.getElementsByClassName("theme-img-logo");
-	for(var i = logoImgs.length - 1; i >= 0; i--) {
+	let logoImgs = document.getElementsByClassName("theme-img-logo");
+	for(let i = logoImgs.length - 1; i >= 0; i--) {
 		logoImgs[i].src = currTheme.assets_path + "/icon.png";
 	}
 
-	var calImgs = document.getElementsByClassName("theme-img-calendar");
-	for(var i = calImgs.length - 1; i >= 0; i--) {
+	let calImgs = document.getElementsByClassName("theme-img-calendar");
+	for(let i = calImgs.length - 1; i >= 0; i--) {
 		calImgs[i].src = currTheme.assets_path + "/calendar.png";
 	}
 
-	var ghImgs = document.getElementsByClassName("theme-img-github");
-	for(var i = ghImgs.length - 1; i >= 0; i--) {
+	let ghImgs = document.getElementsByClassName("theme-img-github");
+	for(let i = ghImgs.length - 1; i >= 0; i--) {
 		ghImgs[i].src = currTheme.assets_path + "/github.png";
 	}
 }

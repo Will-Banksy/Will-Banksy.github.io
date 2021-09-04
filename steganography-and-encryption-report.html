@@ -43,14 +43,21 @@
 </p>
 <!-- https://stackoverflow.com/questions/19654577/html-embedded-pdf-iframe#19654875 -->
 <object data="assets/Steganography-And-Encryption-Report.pdf" type="application/pdf" width=100% style="height: 100vh;">
-    <iframe id="steg-enc-report-pdf" src="https://docs.google.com/viewer?url=assets/Steganography-And-Encryption-Report.pdf&embedded=true" width=100% style="height: 100vh;"></iframe>
+    <iframe id="steg-enc-report-pdf" src="https://docs.google.com/viewer?url=_&embedded=true" width=100% style="height: 100vh;"></iframe>
     <script>
-var hostname = window.location.hostname;
-var path = "assets/Steganography-And-Encryption-Report.pdf";
-var iframeSrc = "https://docs.google.com/viewer?url=" + hostname + "/" + path + "&embedded=true"
-document.getElementById("steg-enc-report-pdf").src = iframeSrc;
+let hostname = window.location.hostname;
+if(hostname !== "") {
+	let path = "assets/Steganography-And-Encryption-Report.pdf";
+	let iframeSrc = "https://docs.google.com/viewer?url=" + hostname + "/" + path + "&embedded=true"
+	document.getElementById("steg-enc-report-pdf").src = iframeSrc;
+} else {
+	document.getElementById("steg-enc-report-pdf")
+}
     </script>
 </object>
+<p>
+	(Backup link to pdf: <a href="assets/Steganography-And-Encryption-Report.pdf">Steganography-And-Encryption-Report.pdf</a>)
+</p>
 			</article>
 		</main>
 
@@ -59,7 +66,7 @@ document.getElementById("steg-enc-report-pdf").src = iframeSrc;
 		<p>&copy; 2021 William Banks</p>
 		<div class="footer-link-list">
 			<a href="https://github.com/Will-Banksy">
-				<img class="theme-img-github" src=""> <!-- The JS will fill in the image src -->
+				<img class="theme-img-github" src=""><!-- The JS will fill in the image src -->
 			</a>
 		</div>
 	</div>
